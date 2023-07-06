@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PortalStoreFier.Models.CustomerActivity>
+
+@{
+    ViewData["Title"] = "Customer Activity";
+}
+
+<h1>Customer Activity</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DatePostPublished)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostIdea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostDesign)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DatePostPublished)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostIdea)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PostContent)
+                </td>
+                @*            <td>
+            @Html.DisplayFor(modelItem => item.PostDesign)
+            </td>*@
+                <td>
+                    @if (!string.IsNullOrEmpty(item.PostDesign))
+                    {
+                        <img src="@item.PostDesign" alt="Post Design" style="max-width: 70px;" />
+                    }
+                    else
+                    {
+                        <span>No Design</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

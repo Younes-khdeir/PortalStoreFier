@@ -1,0 +1,95 @@
+﻿@model PortalStoreFier.Models.CustomerActivity
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CustomerActivity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee_Name" class="control-label"></label>
+                <input asp-for="Employee_Name" class="form-control" />
+                <span asp-validation-for="Employee_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostType" class="control-label"></label>
+                <select asp-for="PostType" class="form-control" asp-items="Html.GetEnumSelectList<PostType>()">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="PostType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DatePostPublished" class="control-label"></label>
+                <input asp-for="DatePostPublished" class="form-control" />
+                <span asp-validation-for="DatePostPublished" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostIdea" class="control-label"></label>
+                <textarea asp-for="PostIdea" class="form-control"> </textarea>
+                <span asp-validation-for="PostIdea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostContent" class="control-label"></label>
+                <textarea asp-for="PostContent" class="form-control"> </textarea>
+                <span asp-validation-for="PostContent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostDesign" class="control-label"></label>
+                <input type="file" name="PostDesignFile" asp-for="PostDesign" class="form-control" />
+                <span asp-validation-for="PostDesign" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FacebookPostLink" class="control-label"></label>
+                <input asp-for="FacebookPostLink" class="form-control" />
+                <span asp-validation-for="FacebookPostLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InstagramPostLink" class="control-label"></label>
+                <input asp-for="InstagramPostLink" class="form-control" />
+                <span asp-validation-for="InstagramPostLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsSponsored" class="control-label"></label>
+                <select asp-for="IsSponsored" class="form-control" asp-items="Html.GetEnumSelectList<IsSponsored>()">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="IsSponsored" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SponsoredValue" class="control-label"></label>
+                <input asp-for="SponsoredValue" class="form-control" />
+                <span asp-validation-for="SponsoredValue" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

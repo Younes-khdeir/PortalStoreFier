@@ -1,0 +1,146 @@
+﻿@model PortalStoreFier.Models.Customer
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.ContactNumber)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.ContactNumber)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Classification)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Classification.ClassificationName)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.WorkplaceGovernorate)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.WorkplaceGovernorate)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.WorkplaceCity)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.WorkplaceCity)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.WorkplaceResidentialArea)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.WorkplaceResidentialArea)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Facebook_page)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Facebook_page)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Instagram_page)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Instagram_page)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Whatsapp_business_account)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Whatsapp_business_account)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Start_WorkingHours)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Start_WorkingHours)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.End_WorkingHours)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.End_WorkingHours)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Employee_Name)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Employee_Name)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.OfficialEmail)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.OfficialEmail)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.TikTok_page)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.TikTok_page)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Twitter_page)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Twitter_page)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.Linkedin_page)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.Linkedin_page)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.YouTube_page)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.YouTube_page)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.GeographicalLocation_GPS)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.GeographicalLocation_GPS)
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.CompanyLogo)
+        </dt>
+        <dd class = "col-sm-9">
+            @if (!string.IsNullOrEmpty(Model.CompanyLogo))
+            {
+                <img src="@Url.Content(Model.CompanyLogo)" alt="Post Design Image" width="200" />
+            }
+            else
+            {
+                <span>No image available</span>
+            }
+           @* @Html.DisplayFor(model => model.CompanyLogo)*@
+        </dd>
+        <dt class = "col-sm-3">
+            @Html.DisplayNameFor(model => model.CompanyWebsite)
+        </dt>
+        <dd class = "col-sm-9">
+            @Html.DisplayFor(model => model.CompanyWebsite)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

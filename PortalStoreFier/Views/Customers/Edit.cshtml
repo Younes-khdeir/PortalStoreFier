@@ -1,0 +1,143 @@
+﻿@model PortalStoreFier.Models.Customer
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactNumber" class="control-label"></label>
+                <input asp-for="ContactNumber" class="form-control" />
+                <span asp-validation-for="ContactNumber" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="ClassificationId" class="control-label"></label>
+                <select asp-for="ClassificationId" class="form-control" asp-items="ViewBag.ClassificationId">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="WorkplaceGovernorate" class="control-label"></label>
+                <select asp-for="WorkplaceGovernorate" class="form-control" asp-items="Html.GetEnumSelectList<WorkplaceGovernorate>()">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="WorkplaceGovernorate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkplaceCity" class="control-label"></label>
+                <select asp-for="WorkplaceCity" class="form-control" asp-items="Html.GetEnumSelectList<WorkplaceCity>()">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="WorkplaceCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkplaceResidentialArea" class="control-label"></label>
+                <input asp-for="WorkplaceResidentialArea" class="form-control" />
+                <span asp-validation-for="WorkplaceResidentialArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Facebook_page" class="control-label"></label>
+                <input asp-for="Facebook_page" class="form-control" />
+                <span asp-validation-for="Facebook_page" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Instagram_page" class="control-label"></label>
+                <input asp-for="Instagram_page" class="form-control" />
+                <span asp-validation-for="Instagram_page" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Whatsapp_business_account" class="control-label"></label>
+                <input asp-for="Whatsapp_business_account" class="form-control" />
+                <span asp-validation-for="Whatsapp_business_account" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Start_WorkingHours" class="control-label"></label>
+                <input asp-for="Start_WorkingHours" class="form-control" />
+                <span asp-validation-for="Start_WorkingHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="End_WorkingHours" class="control-label"></label>
+                <input asp-for="End_WorkingHours" class="form-control" />
+                <span asp-validation-for="End_WorkingHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee_Name" class="control-label"></label>
+                <input asp-for="Employee_Name" class="form-control" />
+                <span asp-validation-for="Employee_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OfficialEmail" class="control-label"></label>
+                <input asp-for="OfficialEmail" class="form-control" />
+                <span asp-validation-for="OfficialEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TikTok_page" class="control-label"></label>
+                <input asp-for="TikTok_page" class="form-control" />
+                <span asp-validation-for="TikTok_page" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Twitter_page" class="control-label"></label>
+                <input asp-for="Twitter_page" class="form-control" />
+                <span asp-validation-for="Twitter_page" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Linkedin_page" class="control-label"></label>
+                <input asp-for="Linkedin_page" class="form-control" />
+                <span asp-validation-for="Linkedin_page" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YouTube_page" class="control-label"></label>
+                <input asp-for="YouTube_page" class="form-control" />
+                <span asp-validation-for="YouTube_page" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeographicalLocation_GPS" class="control-label"></label>
+                <input asp-for="GeographicalLocation_GPS" class="form-control" />
+                <span asp-validation-for="GeographicalLocation_GPS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyLogo" class="control-label"></label>
+                <input type="file" name="CompanyLogoFile" asp-for="CompanyLogo" class="form-control" />
+                <span asp-validation-for="CompanyLogo" class="text-danger"></span>
+                @if (!string.IsNullOrEmpty(Model.CompanyLogo))
+                {
+                    <div>
+                        <img src="@Model.CompanyLogo" alt="Post Design" width="200" />
+                    </div>
+                }
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyWebsite" class="control-label"></label>
+                <input asp-for="CompanyWebsite" class="form-control" />
+                <span asp-validation-for="CompanyWebsite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
